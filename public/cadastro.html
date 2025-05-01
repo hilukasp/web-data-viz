@@ -66,6 +66,10 @@
             <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
           </div>
           <div class="campo">
+            <span>CPF:</span>
+            <input id="cpf_input" type="text" placeholder="xxx.xxx.xxx-xx" />
+          </div>
+          <div class="campo">
             <span>Senha:</span>
             <input id="senha_input" type="password" placeholder="******" />
           </div>
@@ -110,6 +114,7 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var cpfVar=cpf_input.value;
     var codigoVar = codigo_input.value;
     var idEmpresaVincular
 
@@ -119,7 +124,8 @@
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
-      codigoVar == ""
+      codigoVar == ""||
+      cpfVar==""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -156,7 +162,8 @@
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
+        idEmpresaVincularServer: idEmpresaVincular,
+        cpfServer: cpfVar
       }),
     })
       .then(function (resposta) {
